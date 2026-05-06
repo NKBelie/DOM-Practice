@@ -10,38 +10,136 @@
 </head>
 
 <body class="bg-gray-100 text-gray-800 transition-all duration-300">
-    <header>
-        <nav class="bg-white shadow-md px-6 py-4 flex justify-between items-center">
+    <header class="sticky top-0 z-50">
+        <nav class="bg-white shadow-md px-6 py-4">
+            <div class="flex items-center gap-6 justify-between mx-auto max-w-7xl md:px-8">
+                <h1 class="text-xl font-bold text-blue-600">DOM Project</h1>
 
-            <h1 class="text-xl font-bold text-blue-600">DOM Project</h1>
+                <button id="menuBtn" class="md:hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
 
-            <button id="menuBtn" class="md:hidden">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-                </svg>
-            </button>
+                <ul id="navMenu" class="hidden md:flex gap-6 items-center font-medium ">
 
-            <ul id="navMenu" class="hidden md:flex gap-6 items-center font-medium">
+                    <li class="nav-link cursor-pointer hover:text-blue-600 transition">Home</li>
+                    <li class="nav-link cursor-pointer hover:text-blue-600 transition">About</li>
+                    <li class="relative">
+                        <button id="dropBtn" class="flex items-center gap-1 hover:text-blue-600">
+                            Services
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <ul id="dropdown" class="hidden absolute bg-white shadow-lg mt-3 rounded w-40">
+                            <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Design</li>
+                            <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Development</li>
+                        </ul>
+                    </li>
+                    <li class="nav-link cursor-pointer hover:text-blue-600 transition">Contact</li>
 
-                <li class="nav-link cursor-pointer hover:text-blue-600 transition">Home</li>
-                <li class="nav-link cursor-pointer hover:text-blue-600 transition">About</li>
-                <li class="relative">
-                    <button id="dropBtn" class="flex items-center gap-1 hover:text-blue-600">
-                        Services
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-                        </svg>
-                    </button>
-                    <ul id="dropdown" class="hidden absolute bg-white shadow-lg mt-3 rounded w-40">
-                        <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Design</li>
-                        <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Development</li>
-                    </ul>
-                </li>
-                <li class="nav-link cursor-pointer hover:text-blue-600 transition">Contact</li>
-
-            </ul>
+                </ul>
+            </div>
         </nav>
     </header>
-    
+    <main class="max-w-6xl mx-auto p-6 space-y-8">
+        <section class="bg-white p-6 rounded-xl shadow">
+            <h2 class="text-lg font-semibold mb-1">Text Manipulation</h2>
+            <p id="textPara" class="mb-3 text-gray-600">This is original text.</p>
+            <button id="changeText"
+                class="bg-green-500 hover:bg-green-600 text-white px-4 py-1 rounded-lg">
+                Change Text
+            </button>
+        </section>
+        <section class="bg-white p-6 rounded-xl shadow flex justify-between items-center">
+            <h2 class="text-lg font-semibold">Theme Mode</h2>
+            <button id="themeBtn"
+                class="bg-gray-800 hover:bg-black text-white px-4 py-1 rounded-lg">
+                Toggle Dark Mode
+            </button>
+        </section>
+        <section class="bg-white p-6 rounded-xl shadow">
+            <h2 class="text-lg font-semibold">Input Display</h2>
+
+            <div class="flex gap-3">
+                <input id="userInput" type="text"
+                    class="flex-1 border rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                    placeholder="Enter something">
+
+                <button id="displayBtn"
+                    class="bg-blue-500 hover:bg-blue-600 text-white px-2 py-1 rounded-lg">
+                    Show
+                </button>
+            </div>
+            <p id="displayText" class="mt-3 text-blue-600 font-medium"></p>
+        </section>
+
+        <section class="bg-white p-6 rounded-xl shadow">
+            <h2 class="text-lg font-semibold mb-3">Dynamic List</h2>
+
+            <div class="flex gap-3 mb-3">
+                <input id="listInput" type="text"
+                    class="flex-1 border rounded-lg p-2"
+                    placeholder="Add item">
+
+                <button id="addItem"
+                    class="bg-purple-500 hover:bg-purple-600 text-white px-2 py-1 rounded-lg">
+                    Add
+                </button>
+            </div>
+
+            <input id="search" type="text"
+                class="w-full border rounded-lg p-2 mb-3"
+                placeholder="Search...">
+
+            <ul id="list" class="space-y-2"></ul>
+        </section>
+
+        <section>
+            <h2 class="text-xl font-semibold mb-4">Activities</h2>
+
+            <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-6">
+
+                <div class="card bg-white p-5 rounded-xl shadow hover:shadow-lg transition">
+                    <h3 class="font-semibold text-lg">Visit Park</h3>
+                    <p class="text-gray-600 text-sm">Enjoy fresh air and nature.</p>
+                    <button class="addCard mt-3 bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded-lg">
+                        Add
+                    </button>
+                </div>
+
+                <div class="card bg-white p-5 rounded-xl shadow hover:shadow-lg transition">
+                    <h3 class="font-semibold text-lg">Eat Food</h3>
+                    <p class="text-gray-600 text-sm">Try delicious meals.</p>
+                    <button class="addCard mt-3 bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded-lg">
+                        Add
+                    </button>
+                </div>
+
+                <div class="card bg-white p-5 rounded-xl shadow hover:shadow-lg transition">
+                    <h3 class="font-semibold text-lg">Travel</h3>
+                    <p class="text-gray-600 text-sm">Explore new places.</p>
+                    <button class="addCard mt-3 bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded-lg">
+                        Add
+                    </button>
+                </div>
+
+                <div class="card bg-white p-5 rounded-xl shadow hover:shadow-lg transition">
+                    <h3 class="font-semibold text-lg">Study</h3>
+                    <p class="text-gray-600 text-sm">Learn new skills.</p>
+                    <button class="addCard mt-3 bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded-lg">
+                        Add
+                    </button>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-900 text-white text-center p-4 mt-10">
+        &copy;2026 DOM Assignment
+    </footer>
 </body>
 </html>
