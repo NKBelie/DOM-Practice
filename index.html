@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,20 +12,30 @@
     }
 </script>
 </head>
-
-<body class="bg-gray-100 text-gray-800 transition-all duration-300">
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-100 transition-all duration-300">
     <header class="sticky top-0 z-50">
-        <nav class="bg-white shadow-md px-6 py-4">
-            <div class="flex items-center gap-6 justify-between mx-auto max-w-7xl md:px-8">
-                <h1 class="text-xl font-bold text-blue-600">DOM Project</h1>
-                <button id="menuBtn" class="md:hidden">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-                    </svg>
-                </button>
+        <nav class="bg-white dark:bg-gray-800 shadow-md px-4 py-4">
+            <div class="mx-auto flex flex-wrap items-center justify-between gap-4 max-w-7xl">
+                <div class="flex items-center gap-4">
+                    <h1 class="text-3xl font-bold text-orange-600">
+                        Explor<span class="text-gray-800 dark:text-white">Hub</span>
+                    </h1>
+                </div>
 
-                <ul id="navMenu" class="hidden md:flex gap-6 items-center font-medium ">
+                <div class="flex items-center gap-3">
+                    <button id="themeBtn" class="bg-gray-700 hover:bg-gray-600 text-white p-2 rounded-lg flex gap-2">
+                        <svg id="themeIcon" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+                        </svg>
+                    </button>
+                    <button id="menuBtn" class="md:hidden rounded-md bg-gray-100 dark:bg-gray-700 p-2 text-gray-800 dark:text-gray-100">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
 
+                <ul id="navMenu" class="hidden w-full flex-col gap-3 pt-4 border-t border-gray-200 dark:border-gray-700 md:flex md:w-auto md:flex-row md:items-center md:border-0 md:pt-0">
                     <li class="nav-link cursor-pointer hover:text-blue-600 transition">Home</li>
                     <li class="nav-link cursor-pointer hover:text-blue-600 transition">About</li>
                     <li class="relative">
@@ -35,9 +45,9 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
                             </svg>
                         </button>
-                        <ul id="dropdown" class="hidden absolute bg-white shadow-lg mt-3 rounded w-40 ">
-                            <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Design</li>
-                            <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Development</li>
+                        <ul id="dropdown" class="hidden absolute bg-white dark:bg-gray-700 shadow-lg mt-3 rounded w-40">
+                            <li class="px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 cursor-pointer">Design</li>
+                            <li class="px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 cursor-pointer">Development</li>
                         </ul>
                     </li>
                     <li class="nav-link cursor-pointer hover:text-blue-600 transition">Contact</li>
@@ -46,100 +56,102 @@
         </nav>
     </header>
     <main class="max-w-6xl mx-auto p-6 space-y-8">
-        <section class="bg-white p-6 rounded-xl shadow">
+        <section>
+            <div class="grid bg-orange-600 text-white rounded p-4">
+                <h1 class="text-4xl font-bold py-2">Discover your next Adventure</h1>
+                <p>
+                    An interactive Build with pure DOM Manipulation explore activities,
+                    build your List and make it yours.
+                </p>
+            </div>
+        </section>
+        <section class="">
             <h2 class="text-lg font-semibold mb-1">Text Manipulation</h2>
-            <p id="textPara" class="mb-3 text-gray-600">This is original text.</p>
-            <button id="changeText"
-                class="bg-green-500 hover:bg-green-600 text-white px-4 py-1 rounded-lg">
-                Change Text
-            </button>
-        </section>
-        <section class="bg-white p-6 rounded-xl shadow flex justify-between items-center">
-            <h2 class="text-lg font-semibold">Theme Mode</h2>
-            <button id="themeBtn"
-                class="bg-gray-800 hover:bg-black text-white px-4 py-1 rounded-lg">
-                Toggle Dark Mode
-            </button>
-        </section>
-        <section class="bg-white p-6 rounded-xl shadow">
-            <h2 class="text-lg font-semibold">Input Display</h2>
-
-            <div class="flex gap-3">
-                <input id="userInput" type="text"
-                    class="flex-1 border rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
-                    placeholder="Enter something">
-
-                <button id="displayBtn"
-                    class="bg-blue-500 hover:bg-blue-600 text-white px-2 py-1 rounded-lg">
-                    Show
+            <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow">
+                <p id="textPara" class="mb-3 text-gray-600 dark:text-gray-300">
+                    This is original text.
+                </p>
+                <button id="changeText" class="bg-green-700 hover:bg-green-600 text-white px-4 py-1 rounded-lg items-center">
+                    Change
                 </button>
             </div>
-            <p id="displayText" class="mt-3 text-blue-600 font-medium"></p>
         </section>
-        <section class="bg-white p-6 rounded-xl shadow">
+        <section class="">
+            <div>
+                <h2 class="text-lg font-semibold">Input &amp; Display</h2>
+
+                <div class="flex gap-3 bg-white dark:bg-gray-800 p-6 rounded-xl shadow">
+                    <input id="userInput" type="text"
+                        class="flex-1 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                        placeholder="Enter something">
+
+                    <button id="displayBtn" class="bg-orange-700 hover:bg-orange-600 text-white px-2 py-1 rounded-lg">
+                        Display
+                    </button>
+                </div>
+                <p id="displayText" class="mt-3 text-gray-600 dark:text-gray-300 font-medium"></p>
+            </div>
+        </section>
+        <section class="">
             <h2 class="text-lg font-semibold mb-3">Dynamic List</h2>
+            <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow">
+                <div class="flex gap-3 mb-3">
+                    <input id="listInput" type="text" class="flex-1 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 rounded-lg p-2" placeholder="Add item">
+                    <button id="addItem"
+                        class="bg-green-700 hover:bg-green-600 text-white px-3 py-1 rounded-lg">
+                        Add
+                    </button>
+                </div>
 
-            <div class="flex gap-3 mb-3">
-                <input id="listInput" type="text"
-                    class="flex-1 border rounded-lg p-2"
-                    placeholder="Add item">
+                <input id="search" type="text"
+                    class="w-full border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 rounded-lg p-2 mb-3"
+                    placeholder="Search...">
 
-                <button id="addItem"
-                    class="bg-purple-500 hover:bg-purple-600 text-white px-2 py-1 rounded-lg">
-                    Add
-                </button>
+                <ul id="list" class="space-y-2"></ul>
             </div>
-
-            <input id="search" type="text"
-                class="w-full border rounded-lg p-2 mb-3"
-                placeholder="Search...">
-
-            <ul id="list" class="space-y-2"></ul>
         </section>
-
         <section>
             <h2 class="text-xl font-semibold mb-4">Activities</h2>
 
             <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-6">
 
-                <div class="card bg-white p-5 rounded-xl shadow hover:shadow-lg transition">
+                <div class="card bg-white dark:bg-gray-800 p-5 rounded-xl shadow hover:shadow-lg transition">
                     <h3 class="font-semibold text-lg">Visit Park</h3>
-                    <p class="text-gray-600 text-sm">Enjoy fresh air and nature.</p>
-                    <button class="addCard mt-3 bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded-lg">
+                    <p class="text-gray-600 dark:text-gray-300 text-sm">Enjoy fresh air and nature.</p>
+                    <button class="addCard mt-3 bg-orange-700 hover:bg-orange-600 text-white px-3 py-1 rounded-lg">
                         Add
                     </button>
                 </div>
 
-                <div class="card bg-white p-5 rounded-xl shadow hover:shadow-lg transition">
+                <div class="card bg-white dark:bg-gray-800 p-5 rounded-xl shadow hover:shadow-lg transition">
                     <h3 class="font-semibold text-lg">Eat Food</h3>
-                    <p class="text-gray-600 text-sm">Try delicious meals.</p>
-                    <button class="addCard mt-3 bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded-lg">
+                    <p class="text-gray-600 dark:text-gray-300 text-sm">Try delicious meals.</p>
+                    <button class="addCard mt-3 bg-orange-700 hover:bg-orange-600 text-white px-3 py-1 rounded-lg">
                         Add
                     </button>
                 </div>
 
-                <div class="card bg-white p-5 rounded-xl shadow hover:shadow-lg transition">
+                <div class="card bg-white dark:bg-gray-800 p-5 rounded-xl shadow hover:shadow-lg transition">
                     <h3 class="font-semibold text-lg">Travel</h3>
-                    <p class="text-gray-600 text-sm">Explore new places.</p>
-                    <button class="addCard mt-3 bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded-lg">
+                    <p class="text-gray-600 dark:text-gray-300 text-sm">Explore new places.</p>
+                    <button class="addCard mt-3 bg-orange-700 hover:bg-orange-600 text-white px-3 py-1 rounded-lg">
                         Add
                     </button>
                 </div>
 
-                <div class="card bg-white p-5 rounded-xl shadow hover:shadow-lg transition">
+                <div class="card bg-white dark:bg-gray-800 p-5 rounded-xl shadow hover:shadow-lg transition">
                     <h3 class="font-semibold text-lg">Study</h3>
-                    <p class="text-gray-600 text-sm">Learn new skills.</p>
-                    <button class="addCard mt-3 bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded-lg">
+                    <p class="text-gray-600 dark:text-gray-300 text-sm">Learn new skills.</p>
+                    <button class="addCard mt-3 bg-orange-700 hover:bg-orange-600 text-white px-3 py-1 rounded-lg">
                         Add
                     </button>
                 </div>
 
             </div>
         </section>
-
     </main>
-
-    <footer class="bg-gray-900 text-white text-center p-4 mt-10">
+    <hr>
+    <footer class="bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-200 text-center p-2 mt-10">
         &copy;2026 DOM Assignment
     </footer>
     <script >
@@ -165,17 +177,63 @@
         });
 
         const themeBtn = document.getElementById("themeBtn");
-        changeThemeBtn.addEventListener("click", function () {
-            document.body.classList.toggle("dark");
+        const themeIcon = document.getElementById("themeIcon");
+        themeBtn.addEventListener("click", function () {
+            document.documentElement.classList.toggle("dark");
+            if (document.documentElement.classList.contains("dark")) {
+                themeIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>';
+            } else {
+                themeIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>';
+            }
         });
+
         const userInput = document.getElementById("userInput");
         const displayBtn = document.getElementById("displayBtn");
 
         displayBtn.addEventListener("click", function () {
             const value = userInput.value;
             const displayText = document.getElementById("displayText");
-            displayText.innerText = "You entered: " + value;
+            displayText.innerText = value;
         });
+
+        const addItem = document.getElementById("addItem");
+        const listInput = document.getElementById("listInput");
+
+        addItem.addEventListener("click", function () {
+            const value = listInput.value.trim();
+            if (value) {
+                const list = document.getElementById("list");
+                const li = document.createElement("li");
+                li.className = "bg-gray-200 dark:bg-gray-700 p-2 rounded flex justify-between items-center";
+                li.innerHTML = `${value} <button class="removeBtn bg-red-500 hover:bg-red-600 text-white px-2 py-1 rounded">Remove</button>`;
+                list.appendChild(li);
+                listInput.value = "";
+
+                const removeBtn = li.querySelector(".removeBtn");
+                removeBtn.addEventListener("click", function () {
+                    list.removeChild(li);
+                });
+            }
+        });
+
+            const searchInput = document.getElementById("search");
+            searchInput.addEventListener("input", function () {
+                const query = searchInput.value.toLowerCase();
+                const items = document.querySelectorAll("#list li");
+                items.forEach(function (item) {
+                    const text = item.textContent.toLowerCase();
+                    item.style.display = text.includes(query) ? "flex" : "none";
+                });
+            });
+
+            const addCardButtons = document.querySelectorAll(".addCard");
+            addCardButtons.forEach(function (button) {
+                button.addEventListener("click", function () {
+                    const card = button.closest(".card");
+                    const title = card.querySelector("h3").innerText;
+                    alert(`You added: ${title}`);
+                });
+            });
     </script>
     <script src="script.js"></script>
 </body>
