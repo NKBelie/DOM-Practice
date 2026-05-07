@@ -26,9 +26,9 @@ This project demonstrates fundamental DOM manipulation techniques including:
 - Responsive design principles
 - JavaScript array manipulation for list management
 
-## Student Information
+## Personal Information
 
-- **Student Name**: [Belie NDAYISABA KAMARIZA]
+- **Name**: [Belie NDAYISABA KAMARIZA]
 - **Course**: [Advanced FrontEnd  / DOM Manipulation]
 - **Instructor**: [Igire Rwanda Organization]
 - **Program**: [SheCanCODE Program]
